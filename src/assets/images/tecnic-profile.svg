@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43">
+  <g id="_03-structure" data-name="03-structure" transform="translate(-0.422 -0.615)">
+    <path id="Trazado_134" data-name="Trazado 134" d="M26.84,26.647h3.613V17.613A3.613,3.613,0,0,0,26.84,14H19.613A3.613,3.613,0,0,0,16,17.613v9.034h3.613" transform="translate(-1.45 -1.204)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <ellipse id="Elipse_24" data-name="Elipse 24" cx="3.5" cy="4" rx="3.5" ry="4" transform="translate(18.422 3.615)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Trazado_135" data-name="Trazado 135" d="M20,24V40.26a1.807,1.807,0,0,0,1.807,1.807H25.42a1.807,1.807,0,0,0,1.807-1.807V24" transform="translate(-1.836 -2.17)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <line id="Línea_13" data-name="Línea 13" y2="12" transform="translate(21.422 27.615)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <circle id="Elipse_25" data-name="Elipse 25" cx="2.5" cy="2.5" r="2.5" transform="translate(1.422 1.615)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <circle id="Elipse_26" data-name="Elipse 26" cx="2.5" cy="2.5" r="2.5" transform="translate(1.422 19.615)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <ellipse id="Elipse_27" data-name="Elipse 27" cx="2.5" cy="3" rx="2.5" ry="3" transform="translate(1.422 36.615)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <circle id="Elipse_28" data-name="Elipse 28" cx="3" cy="3" r="3" transform="translate(36.422 36.615)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <ellipse id="Elipse_29" data-name="Elipse 29" cx="3" cy="2.5" rx="3" ry="2.5" transform="translate(36.422 19.615)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <ellipse id="Elipse_30" data-name="Elipse 30" cx="3" cy="2.5" rx="3" ry="2.5" transform="translate(36.422 1.615)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <line id="Línea_14" data-name="Línea 14" x2="6" transform="translate(6.422 21.615)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <line id="Línea_15" data-name="Línea 15" x2="5" transform="translate(31.422 21.615)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Trazado_136" data-name="Trazado 136" d="M7,4h4.517L15.13,7.613" transform="translate(-0.58 -0.237)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Trazado_137" data-name="Trazado 137" d="M7,43.613h4.517L15.13,40" transform="translate(-0.58 -3.716)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Trazado_138" data-name="Trazado 138" d="M40.13,43.613H35.613L32,40" transform="translate(-2.996 -3.716)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Trazado_139" data-name="Trazado 139" d="M40.13,4H35.613L32,7.613" transform="translate(-2.996 -0.237)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>
