@@ -5,6 +5,8 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 
 import Normalize from 'react-normalize';
+import './fontawesome';
+
 
 import './assets/sass/main.scss';
 
