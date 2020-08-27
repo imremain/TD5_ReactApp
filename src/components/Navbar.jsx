@@ -17,8 +17,8 @@ const Navbar = () =>{
                 <a className="slide__item fourth-position" href="/"><img src={avatar1} alt=""/>Jaime Escobedo</a>
             </div>
             <div className="slide__buttons">
-                <button className="slide__buttons-single"><span></span></button>                    
-                <button className="slide__buttons-single"><span></span></button>
+                <button className="slide__buttons-single"><span>PREV</span></button>                    
+                <button className="slide__buttons-single"><span>NEXT</span></button>
             </div>
         </nav>
     );
