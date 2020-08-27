@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "../assets/css/carousel.css";
+import React, { Component } from 'react';
+import '../assets/css/carousel.css';
 
 class Item extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class Item extends Component {
   }
 
   render() {
-    const className = "item level" + this.props.level;
+    const className = `item level${this.props.level}`;
     return <div className={className}>{this.props.id}</div>;
   }
 }
