@@ -1,12 +1,11 @@
-import React from 'react';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import React from "react";
+import Normalize from "react-normalize";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
-import Normalize from 'react-normalize';
-
-import './assets/sass/main.scss';
+import "./assets/sass/main.scss";
 
 function App() {
   return (

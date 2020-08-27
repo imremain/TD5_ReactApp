@@ -1,25 +1,27 @@
-import React from 'react';
+import React from "react";
+import Carousel from "./Carousel";
 
-const Header = () =>{
-    return(
-        <header>
-            <section className="about-me">
-                <div className="about-me__name">
-                    <h1>Erik Guevara</h1>
-                    <div className="socials">
-                        <a href="/"><span className="flaticon-001-facebook"></span></a>
-                        <a href="/"><span className="flaticon-002-twitter"></span></a>
-                        <a href="/"><span className="flaticon-011-instagram"></span></a>
-                        <a href="/"><span className="flaticon-010-linkedin"></span></a>
-                        <a href="/"><span className="flaticon-008-youtube"></span></a>
-                    </div>
-                    <p className="about-me__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium veritatis magni, nemo omnis
-                        debitis reprehenderit ipsam eveniet eum, praesentium alias repudiandae totam tenetur error vitae
-                        beatae aspernatur molestias fugit sequi.</p>
-                </div>      
-            </section>
-        </header>
-    );
+import Perfil1 from "../assets/images/img-perfil-1.jpeg";
+import Perfil2 from "../assets/images/img-perfil-2.jpeg";
+import Perfil3 from "../assets/images/img-perfil-3.jpg";
+
+const Header = () => {
+  var items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  //   const items = [
+  //     { Perfil1 },
+  //     { Perfil2 },
+  //     { Perfil3 },
+  //     { Perfil1 },
+  //     { Perfil2 },
+  //     { Perfil3 },
+  //     { Perfil1 },
+  //   ];
+
+  return (
+    <header>
+      <Carousel items={items} active={0} />
+    </header>
+  );
 };
 
 export default Header;
