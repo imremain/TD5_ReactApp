@@ -1,18 +1,18 @@
 import React from 'react';
+import Normalize from 'react-normalize';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
-import Normalize from 'react-normalize';
 import './fontawesome';
-
-
+/* flaticon */
+import './assets/font/flaticon.css';
 import './assets/sass/main.scss';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Normalize />
       <Navbar />
       <Header />
