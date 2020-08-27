@@ -16,6 +16,14 @@ Installation of Webpack and some plugins:
 
 `npm install --save-dev webpack-dev-server`
 
+### Webpack Images
+We are going to use File Loader to access the images of our project from the code.
+
+Initially, these static files are located alongside the development code. But at compile time, Webpack will save the images to a new folder alongside the production code and update our components (or wherever we use the images) with the new file names and paths.
+
+File Loader installation:
+`npm install --save-dev file-loader`
+
 ## Sass Loader
 Preprocessors like Sass are tools that allow us to write CSS with a slightly different and friendlier syntax that will later be transformed into normal CSS. Thanks to Sass we can write CSS with variables, mixins, loops, among other features.
 
@@ -29,10 +37,3 @@ They are responsible for reviewing the code we write to indicate where we have e
 ESLint installation:
 `npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y`
 
-## Webpack Images
-We are going to use File Loader to access the images of our project from the code.
-
-Initially, these static files are located alongside the development code. But at compile time, Webpack will save the images to a new folder alongside the production code and update our components (or wherever we use the images) with the new file names and paths.
-
-File Loader installation:
-`npm install --save-dev file-loader`
