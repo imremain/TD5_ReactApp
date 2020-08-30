@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
-import '../assets/css/carousel.css';
+import React from 'react';
 
-class Item extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      level: this.props.level,
-    };
-  }
+const Item = (props) => {
+  const { level, fullname, photo } = props;
+  const className = `item level${level}`;
 
-  render() {
-    const className = `item level${this.props.level}`;
-    return <div className={className}>{this.props.id}</div>;
-  }
-}
+  return (
+    <div className={className}>
+      <a key={`index-${fullname}`} className='slide__item' href='/'>
+        <img src={photo} alt='' />
+        <span>{fullname}</span>
+      </a>
+    </div>
+  );
+};
 
 export default Item;

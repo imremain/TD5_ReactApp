@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import ReactCSSTransitionGroup from 'react-transition-group';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import Item from './Item';
-import '../assets/css/carousel.css';
+import '../assets/sass/carousel.scss';
 
 class Carousel extends Component {
   constructor(props) {
@@ -28,7 +30,7 @@ class Carousel extends Component {
       }
       level = this.state.active - i;
       items.push(
-        <Item key={index} id={this.state.items[index]} level={level} />,
+        <Item key={index} fullname={this.state.items[index].fullname} photo={this.state.items[index].photo} level={level} />,
       );
     }
     return items;
@@ -55,14 +57,19 @@ class Carousel extends Component {
     return (
       <div id='carousel' className='noselect'>
         <div className='arrow arrow-left' onClick={this.leftClick}>
-          <i className='fi-arrow-left' />
+          <FontAwesomeIcon icon={faAngleLeft} />
         </div>
-        {/* <ReactCSSTransitionGroup transitionName={this.state.direction}>
+
+        <ReactCSSTransitionGroup
+          transitionName={this.state.direction}
+          transitionEnterTimeout={4000}
+          transitionLeaveTimeout={4000}
+        >
           {this.generateItems()}
-        </ReactCSSTransitionGroup> */}
+        </ReactCSSTransitionGroup>
 
         <div className='arrow arrow-right' onClick={this.rightClick}>
-          <i className='fi-arrow-right' />
+          <FontAwesomeIcon icon={faAngleRight} />
         </div>
       </div>
     );
