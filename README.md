@@ -37,3 +37,13 @@ They are responsible for reviewing the code we write to indicate where we have e
 ESLint installation:
 `npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y`
 
+## Firebase Realtime Database
+
+The principal reason for choose Firebase Realtime Database was because We can use any Firebase Realtime Database URL as a REST endpoint. All we need to do is append .json to the end of the URL and send a request from our favorite HTTPS client.
+Store and sync data with our NoSQL cloud database.
+Data is stored as JSON and synchronized in realtime to every connected client.
+
+URL: https://td5-presentation.firebaseio.com/
+Endpoint: /members.json
+
+
