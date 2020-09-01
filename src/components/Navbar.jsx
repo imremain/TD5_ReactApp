@@ -3,7 +3,10 @@ import Carousel from './Carousel';
 
 function Navbar(props) {
   return (
-        <Carousel items={props.members} active={0} />
+      <nav className="slide">
+             <Carousel items={props.members} active={0} />
+      </nav>
+       
   );
 };
 

@@ -13,7 +13,7 @@ $color: $color-six;
     @return lighten($color, 40%);
 }
 
-@function oscurecer ($color) {
+@function oscurecer($color) {
     @return darken($color, 40%);
 }
 
