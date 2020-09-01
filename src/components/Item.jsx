@@ -2,15 +2,13 @@ import React from 'react';
 
 const Item = (props) => {
   const { level, fullname, photo } = props;
-  const className = `item level${level}`;
+  const className = `slide__item level${level}`;
 
   return (
-    <div className={className}>
-      <a key={`index-${fullname}`} className='slide__item' href='/'>
+      <a key={`index-${fullname}`} className={className} href='/'>
         <img src={photo} alt='' />
         <span>{fullname}</span>
       </a>
-    </div>
   );
 };
 

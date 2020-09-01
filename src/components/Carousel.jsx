@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import Item from './Item';
-import '../assets/sass/carousel.scss';
+//import '../assets/sass/carousel.scss';
 
 class Carousel extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class Carousel extends Component {
     const items = [];
     let level;
     console.log(this.state.active);
-    for (let i = this.state.active - 2; i < this.state.active + 3; i++) {
+    for (let i = this.state.active - 3; i < this.state.active + 4; i++) {
       let index = i;
       if (i < 0) {
         index = this.state.items.length + i;
@@ -55,23 +55,27 @@ class Carousel extends Component {
 
   render() {
     return (
-      <div id='carousel' className='noselect'>
-        <div className='arrow arrow-left' onClick={this.leftClick}>
-          <FontAwesomeIcon icon={faAngleLeft} />
-        </div>
-
-        <ReactCSSTransitionGroup
-          transitionName={this.state.direction}
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}
-        >
-          {this.generateItems()}
-        </ReactCSSTransitionGroup>
-
-        <div className='arrow arrow-right' onClick={this.rightClick}>
-          <FontAwesomeIcon icon={faAngleRight} />
-        </div>
-      </div>
+      <nav className='slide'>
+          <ReactCSSTransitionGroup
+            transitionName={this.state.direction}
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}
+          >
+           <div className="slide__group">
+            {this.generateItems()} 
+            </div>
+          </ReactCSSTransitionGroup>
+        
+          
+          <div className="slide__buttons">
+              <div className='slide__buttons-single' onClick={this.leftClick}>
+                <FontAwesomeIcon icon={faAngleLeft} />
+              </div>
+              <div className='slide__buttons-single' onClick={this.rightClick}>
+                <FontAwesomeIcon icon={faAngleRight} />
+              </div>
+          </div>
+      </nav>
     );
   }
 }
