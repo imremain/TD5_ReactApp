@@ -62,8 +62,8 @@ class Carousel extends Component {
 
         <ReactCSSTransitionGroup
           transitionName={this.state.direction}
-          transitionEnterTimeout={4000}
-          transitionLeaveTimeout={4000}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
         >
           {this.generateItems()}
         </ReactCSSTransitionGroup>
