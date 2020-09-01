@@ -7,10 +7,10 @@ $color-five: #9E4EF5;
 $color-six: #4CF5A6;
 $color-seven: #F54267;
 
-$color: $color-six;
+$color: $color-seven;
 
 @function aclarar($color) {
-    @return lighten($color, 40%);
+    @return lighten($color, 30%);
 }
 
 @function oscurecer($color) {

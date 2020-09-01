@@ -2,7 +2,7 @@ import React from 'react';
 
 const Item = (props) => {
   const { level, fullname, photo } = props;
-  const className = `slide__item level${level}`;
+  const className = `slide__item item level${level}`;
 
   return (
       <a key={`index-${fullname}`} className={className} href='/'>
