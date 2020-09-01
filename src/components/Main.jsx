@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Skill from './Skill';
+
 import profile from '../assets/images/tecnic-profile.svg';
 import code from '../assets/images/code.svg';
 import power from '../assets/images/power-1.png';
@@ -51,11 +53,9 @@ const Main = (props) => {
               </div>
               <div>
                 <ul className='profile__skills-bars'>
-                  <li className='bar-10'>{props.info.Tools[0].name}</li>
-                  <li className='bar-20'>{props.info.Tools[1].name}</li>
-                  <li className='bar-30'>{props.info.Tools[2].name}</li>
-                  <li className='bar-50'>{props.info.Tools[3].name}</li>
-                  {/* <li className='bar-100'>{props.info.Tools[4].name}</li> */}
+                  {props.info.Tools.map(item =>
+                    <Skill key={item.id} {...item} />
+                    )}
                 </ul>
               </div>
             </div>
