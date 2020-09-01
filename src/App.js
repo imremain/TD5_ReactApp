@@ -19,6 +19,7 @@ class App extends Component {
       error: null,
       data: undefined,
       modalIsOpen: false,
+      memberSelected: 0
     };
   }
 
@@ -39,15 +40,15 @@ class App extends Component {
   };
 
   render() {
-    const { data } = this.state;
+    const { data, memberSelected } = this.state;
     if (data) {
       return (
         <>
           <Normalize />
-          <Navbar members={data} />
-          <Header />
-          <Main />
-          <Footer />
+          <Navbar members={data} itemSelected={(item) => this.setState({memberSelected:item})} />
+          <Header member={data[memberSelected]} />
+          <Main info={data[memberSelected]}/>
+          <Footer social={data[memberSelected]} />
         </>
       );
     }
