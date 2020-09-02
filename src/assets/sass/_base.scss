@@ -1,0 +1,28 @@
+
+$color-one: #F5C022;
+$color-two: #E53BF5;
+$color-three: #F5972F;
+$color-four: #40C2F5;
+$color-five: #9E4EF5;
+$color-six: #4CF5A6;
+$color-seven: #F54267;
+
+$color: $color-seven;
+
+@function aclarar($color) {
+    @return lighten($color, 30%);
+}
+
+@function oscurecer($color) {
+    @return darken($color, 40%);
+}
+
+$standar-margin: 30px;
+
+body {
+    font-family: 'Poppins', sans-serif;;
+ }
+ 
+ h1, h2, h3, h4, h5 {
+     color: oscurecer($color);
+ }

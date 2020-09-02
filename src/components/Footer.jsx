@@ -1,20 +1,23 @@
 import React from 'react';
 
-const Navbar = () =>{
-    return(
-        <footer class="footer-page">
-            <div>
-                <h1>Erik Guevara</h1>
-                <div class="socials-footer">
-                    <a href="/"><span class="flaticon-001-facebook"></span></a>
-                    <a href="/"><span class="flaticon-002-twitter"></span></a>
-                    <a href="/"><span class="flaticon-011-instagram"></span></a>
-                    <a href="/"><span class="flaticon-010-linkedin"></span></a>
-                    <a href="/"><span class="flaticon-008-youtube"></span></a>
-                </div>
-            </div>
-        </footer>
-    );
+import { faFacebook, faTwitter, faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const Footer = (props) => {
+  return (
+    <footer className='footer-page'>
+      <div>
+        <h1>{props.social.fullname}</h1>
+        <div className='socials-footer'>
+          <a href={props.social.facebook} target='_blank'><FontAwesomeIcon icon={faFacebook} /></a>
+          <a href={props.social.twitter} target='_blank'><FontAwesomeIcon icon={faTwitter} /></a>
+          {/* <a href={props.social.facebook} target='_blank'><FontAwesomeIcon icon={faInstagram} /></a> */}
+          <a href={props.social.linkedIn} target='_blank'><FontAwesomeIcon icon={faLinkedin} /></a>
+          <a href={props.social.gitHub} target='_blank'><FontAwesomeIcon icon={faGithub} /></a>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
-export default Navbar;
+export default Footer;

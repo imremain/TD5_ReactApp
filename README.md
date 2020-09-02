@@ -1,68 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React APP - TD5 Presentation
+Here you can fin all dependeces you'll need to run this project.
 
-## Available Scripts
+## Babel
+Babel is a very popular tool for writing modern JavaScript and transforming it into code that any browser can understand.
 
-In the project directory, you can run:
+`npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader`
 
-### `npm start`
+## Webpack
+Webpack is a tool that helps us compile multiple files (JavaScript, HTML, CSS, images) into one (or sometimes a little more) that will have all our code ready for production.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Installation of Webpack and some plugins:
+`npm install webpack webpack-cli html-webpack-plugin html-loader  --save-dev`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Webpack Dev Server
 
-### `npm test`
+`npm install --save-dev webpack-dev-server`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Webpack Images
+We are going to use File Loader to access the images of our project from the code.
 
-### `npm run build`
+Initially, these static files are located alongside the development code. But at compile time, Webpack will save the images to a new folder alongside the production code and update our components (or wherever we use the images) with the new file names and paths.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+File Loader installation:
+`npm install --save-dev file-loader`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Sass Loader
+Preprocessors like Sass are tools that allow us to write CSS with a slightly different and friendlier syntax that will later be transformed into normal CSS. Thanks to Sass we can write CSS with variables, mixins, loops, among other features.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Sass installation:
+`npm install --save-dev mini-css-extract-plugin css-loader node-sass sass-loader`
 
-### `npm run eject`
+## ESLint
+Linters like ESLint are tools that help us follow good practices or style guides of our code.
+They are responsible for reviewing the code we write to indicate where we have errors or possible errors. In some cases they can also fix the errors automatically. In this way we can fix errors even before they happen.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ESLint installation:
+`npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Firebase Realtime Database
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The principal reason for choose Firebase Realtime Database was because We can use any Firebase Realtime Database URL as a REST endpoint. All we need to do is append .json to the end of the URL and send a request from our favorite HTTPS client.
+Store and sync data with our NoSQL cloud database.
+Data is stored as JSON and synchronized in realtime to every connected client.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+URL: https://td5-presentation.firebaseio.com/
+Endpoint: /members.json
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

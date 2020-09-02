@@ -1,79 +1,3 @@
-.slide {
-    background-color:  $color;
-    padding: $standar-margin;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-
-    &__group {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: no-wrap;
-        max-width: 1340px;
-    }
-
-    &__item {
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-        text-align: center;
-
-        img {
-            border: solid 2px white;
-            border-radius: 50%;
-            margin: 0 -10px;
-            width: 110%;
-        }
-
-        &.first-position {
-            width: 300px;
-            z-index: 4;
-        }
-
-        &.second-position {
-            width: 250px;
-            z-index: 3;
-        }
-
-        &.third-position {
-            width: 200px;
-            z-index: 2;
-        }
-
-        &.fourth-position {
-            width: 150px;
-            z-index: 1;
-        }
-    
-    }
-
-    &__buttons {
-        border: none;
-        margin: 30px 0 -40px;
-
-        &-single {
-            align-items: center;
-            background-color: black;
-            color: white;
-            padding: 20px;
-            margin: 0;
-            border: none;
-            &:hover, &:active {
-                    background-color: white;
-                    color: black;
-            }
-        }
-    }
-    
-}
-
-.slide-full-page {
-    height: 100vh;
-    justify-content: center;
-}
-
 .about-me {
     background-color: aclarar($color);
     display: flex;
@@ -83,12 +7,18 @@
     text-align: center;
 
     &__desc {
-        width: 500px;
+        margin: 0 auto;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        width: 70%;
+        word-wrap: break-word;
     }
 }
 
 .socials {
     a {
+        padding: 15px;
+        font-size: 25px;
         text-decoration: none;
         color: black;
 
@@ -99,6 +29,8 @@
     &-footer a {
         color: white;
         text-decoration: none;
+        padding: 15px;
+        font-size: 25px;
     }
 }
 
@@ -115,7 +47,6 @@
 
     &__card {
         border:  1px solid oscurecer($color);
-        margin-left: 50px;
         padding: 20px;
 
         h3 {
@@ -129,7 +60,7 @@
         align-items: center;
 
         img {
-            height: 400px;
+            height: 320px;
             z-index: 1;
         }
         &__desc {
@@ -137,19 +68,20 @@
             border-bottom: 1px solid oscurecer($color);
             border-right: 1px solid oscurecer($color);
             margin-left: -60px;
-            padding-left: 60px;
-            max-width: 200px;
+            padding-left: 70px;
+            max-width: 300px;
+            word-wrap: break-word;
         }
     }
 
     &__tools {
         border: solid 1px oscurecer($color);
-        margin-top: $standar-margin;
+        margin-top: 20px;
 }
 
     &__skills-bars {
       list-style: none;
-      margin-right: 30px;
+      margin-right: 20px;
       
       li {
           background-color: $color;
@@ -198,16 +130,30 @@
     margin-top: $standar-margin;
     align-items: center;
 
-    .icon {
-        border: solid 2px $color;
+    .container-icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
         border-radius: 50%;
-        padding: 12px;
+        padding: 0.8rem;
+        border: solid 2px $color;
         margin: 0 20px;
+    }
+
+    .icon {
+        width: 90%;        
+        // border-radius: 30%;
+        // padding: 12px;
+        // margin: 0 20px;
     }
 }
 
 .english-level {
-    margin: $standar-margin;
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
     border: solid 2px $color;
     border-radius: 50%;
     width: 250px;
@@ -233,8 +179,9 @@
 }
 
 .card-1 {
+    margin-top: 20px;
     grid-column: 1 / 2;
-    grid-row: 2 / 3 ;
+    grid-row: 1 / 3 ;
 }
 
 .card-2 {

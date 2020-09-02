@@ -1,84 +1,103 @@
 import React from 'react';
 
-import '../assets/styles/components/Main.scss';
+import Skill from './Skill';
 
-const Main = () =>{
-    return(
-        <main>
-            <section class="profile">
-                <div class="section-title">
-                    <img class="icon" src="./assets/img/tecnic-profile.svg" alt=""/>
-                    <h2>Tecnic Profile</h2>
+import profile from '../assets/images/tecnic-profile.png';
+import code from '../assets/images/code.png';
+import power from '../assets/images/power-1.png';
+import weakness from '../assets/images/weakness-1.png';
+
+const Main = (props) => {
+  return (
+    <main>
+      <section className='profile'>
+        <div className='section-title'>
+          <div className='container-icon'>
+            <img className='icon' src={profile} alt='' />
+          </div>
+          <h2>Tecnic Profile</h2>
+        </div>
+        <div className='profile__container'>
+          <div className='profile__card card-1'>
+            <h3>Experience</h3>
+            <p>
+              {props.info.Experience}
+            </p>
+          </div>
+          <div className='profile__card card-2'>
+            <h3>Objectives</h3>
+            <p>
+              {props.info.Objectives}
+            </p>
+          </div>
+          <div className='profile__card card-3'>
+            <h3>Soft Skills</h3>
+            <p>
+              {props.info.softSkills}
+            </p>
+          </div>
+          <div className='profile__card card-4'>
+            <h3>Influences</h3>
+            <p>
+              {props.info.Influences}
+            </p>
+          </div>
+          <div className='tools'>
+            <div className='profile__tools'>
+              <div className='section-title'>
+                <div className="container-icon">
+                <img className='icon' src={code} alt='tools' />
                 </div>
-                <div class="profile__container">
-                    <div class="profile__card card-1">        
-                        <h3>Habilidades</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ea quod qui dolore quidem enim
-                            maiores quo, deleniti sed voluptatibus harum corrupti eius sunt eaque laboriosam temporibus
-                            facere
-                            perspiciatis laborum?</p>
-                    </div>
-                    <div class="profile__card card-2">
-                        <h3>Habilidades</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio itaque provident assumenda dolorum
-                            blanditiis molestiae dolore, incidunt, nostrum quidem sequi accusantium sunt, ea vitae harum
-                            inventore velit maiores ab? Hic.</p>
-                    </div>
-                    <div class="profile__card card-3">
-                        <h3>Habilidades</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio itaque provident assumenda dolorum
-                            blanditiis molestiae dolore, incidunt, nostrum quidem sequi accusantium sunt, ea vitae harum
-                            inventore velit maiores ab? Hic.</p>
-                    </div>
-                    <div class="profile__card card-4">
-                        <h3>Habilidades</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio itaque provident assumenda dolorum
-                            blanditiis molestiae dolore, incidunt, nostrum quidem sequi accusantium sunt, ea vitae harum
-                            inventore velit maiores ab? Hic.</p>
-                    </div>                
-                    <div class="tools">
-                        <div class="profile__tools">
-                            <div class="section-title">
-                                <img class="icon" src="./assets/img/code.svg" alt="tools-image"/>
-                                <h2>Tools, languages <br/> and frameworks</h2>
-                            </div>
-                            <div>
-                                <ul class="profile__skills-bars">
-                                    <li class="bar-10">html</li>
-                                    <li class="bar-20">css</li>
-                                    <li class="bar-30"> js</li>
-                                    <li class="bar-50">laravel</li>
-                                    <li class="bar-100">react</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="english-level">
-                            
-                            <h2><span>70%</span>English Level</h2>
-                        </div>
-                    </div>
-                <div class="power profile__values">
-                    <img src="./assets/img/power-1.png" alt=""/>
-                    <div class="profile__values__desc">
-                        <h3>Mi super poder</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab ad a laboriosam aliquam eaque nulla
-                            at numquam. Mollitia, iste sint.
-                        </p>
-                    </div>
-                </div>
-                <div class="weakness profile__values">
-                    <img src="./assets/img/weakness-1.png" alt=""/>
-                    <div class="profile__values__desc">
-                        <h3>Mi mayor debilidad</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deleniti magnam, earum ducimus
-                            itaque tenetur nam inventore nihil aperiam velit?
-                        </p>
-                    </div>
-                </div>
+                <h2>
+                  Tools, languages
+                  <br />
+                  {' '}
+                  and frameworks
+                </h2>
+              </div>
+              <div>
+                <ul className='profile__skills-bars'>
+                  {props.info.Tools.map(item =>
+                    <Skill key={item.id} {...item} />
+                    )}
+                </ul>
+              </div>
             </div>
-        </section>
+            
+            <div className='english-level'>
+              <h2>
+                <span>{props.info.englishLevel}0%</span>
+                English Level
+              </h2>
+            </div>
+
+          </div>
+          <div className='power profile__values'>
+
+            <img src={power} alt='' />
+
+            <div className='profile__values__desc'>
+              <h3>Mi super poder</h3>
+              <p>
+                {props.info.mySuperPower}
+              </p>
+            </div>
+          </div>
+          <div className='weakness profile__values'>
+
+            <img src={weakness} alt='' />
+
+            <div className='profile__values__desc'>
+              <h3>Mi mayor debilidad</h3>
+              <p>
+                {props.info.myBiggestWeakness}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    );
+  );
 };
 
 export default Main;

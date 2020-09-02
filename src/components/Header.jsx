@@ -1,27 +1,27 @@
 import React from 'react';
+import { faFacebook, faTwitter, faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import '../assets/styles/components/Header.scss';
-
-const Header = () =>{
-    return(
-        <header>
-            <section className="about-me">
-                <div className="about-me__name">
-                    <h1>Erik Guevara</h1>
-                    <div className="socials">
-                        <a href="/"><span className="flaticon-001-facebook"></span></a>
-                        <a href="/"><span className="flaticon-002-twitter"></span></a>
-                        <a href="/"><span className="flaticon-011-instagram"></span></a>
-                        <a href="/"><span className="flaticon-010-linkedin"></span></a>
-                        <a href="/"><span className="flaticon-008-youtube"></span></a>
-                    </div>
-                    <p className="about-me__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium veritatis magni, nemo omnis
-                        debitis reprehenderit ipsam eveniet eum, praesentium alias repudiandae totam tenetur error vitae
-                        beatae aspernatur molestias fugit sequi.</p>
-                </div>      
-            </section>
-        </header>
-    );
+const Header = (props) => {
+  return (
+    <header>
+      <section className='about-me'>
+        <div className='about-me__name'>
+          <h1>{props.member.fullname}</h1>
+          <div className='socials'>
+            <a href={props.member.facebook} target='_blank'><FontAwesomeIcon icon={faFacebook} /></a>
+            <a href={props.member.twitter} target='_blank'><FontAwesomeIcon icon={faTwitter} /></a>
+            {/* <a href={props.member.facebook} target='_blank'><FontAwesomeIcon icon={faInstagram} /></a> */}
+            <a href={props.member.linkedIn} target='_blank'><FontAwesomeIcon icon={faLinkedin} /></a>
+            <a href={props.member.gitHub} target='_blank'><FontAwesomeIcon icon={faGithub} /></a>
+          </div>
+          <p className='about-me__desc'>
+            {props.member.whoAreYou}
+          </p>
+        </div>
+      </section>
+    </header>
+  );
 };
 
 export default Header;
