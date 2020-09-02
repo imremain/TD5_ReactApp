@@ -3,6 +3,8 @@
   padding: $standar-margin;
   overflow: hidden;
   height: 300px;
+  max-width: 100%;
+  position: relative;
 
   &__group {
    position: absolute;
