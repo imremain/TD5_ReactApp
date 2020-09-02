@@ -1,7 +1,7 @@
 import React from 'react';
 
-import profile from '../assets/images/tecnic-profile.svg';
-import code from '../assets/images/code.svg';
+import profile from '../assets/images/tecnic-profile.png';
+import code from '../assets/images/code.png';
 import power from '../assets/images/power-1.png';
 import weakness from '../assets/images/weakness-1.png';
 
@@ -10,9 +10,9 @@ const Main = () => {
     <main>
       <section className='profile'>
         <div className='section-title'>
-
-          <img className='icon' src={profile} alt='' />
-
+          <div className='container-icon'>
+            <img className='icon' src={profile} alt='' />
+          </div>
           <h2>Tecnic Profile</h2>
         </div>
         <div className='profile__container'>
@@ -52,9 +52,9 @@ const Main = () => {
           <div className='tools'>
             <div className='profile__tools'>
               <div className='section-title'>
-
+                <div className="container-icon">
                 <img className='icon' src={code} alt='tools' />
-
+                </div>
                 <h2>
                   Tools, languages
                   <br />
@@ -68,17 +68,18 @@ const Main = () => {
                   <li className='bar-20'>css</li>
                   <li className='bar-30'> js</li>
                   <li className='bar-50'>laravel</li>
-                  <li className='bar-100'>react</li>
+                  <li className='bar-90'>react</li>
                 </ul>
               </div>
             </div>
+            
             <div className='english-level'>
-
               <h2>
                 <span>70%</span>
                 English Level
               </h2>
             </div>
+
           </div>
           <div className='power profile__values'>
 
@@ -87,8 +88,8 @@ const Main = () => {
             <div className='profile__values__desc'>
               <h3>Mi super poder</h3>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab ad a laboriosam aliquam eaque nulla
-                at numquam. Mollitia, iste sint.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deleniti magnam, earum ducimus
+                itaque tenetur nam inventore nihil aperiam velit?
               </p>
             </div>
           </div>

@@ -16,7 +16,7 @@ const Header = () => {
             <a href='/'><FontAwesomeIcon icon={faGithub} /></a>
           </div>
           <p className='about-me__desc'>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium veritatis magni, nemo omnis
+            LoDASDSADrem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium veritatis magni, nemo omnis
             debitis reprehenderit ipsam eveniet eum, praesentium alias repudiandae totam tenetur error vitae
             beatae aspernatur molestias fugit sequi.
           </p>
