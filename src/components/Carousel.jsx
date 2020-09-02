@@ -16,6 +16,12 @@ class Carousel extends Component {
     this.leftClick = this.moveLeft.bind(this);
   }
 
+  selected() {
+      const seleccion = this.generateItems()[2].key;
+      this.props.selected(seleccion);
+      // console.log('Esta es una seleccion ',this.state.items[seleccion])
+    }
+
   generateItems() {
     const items = [];
     let level;
@@ -41,7 +47,7 @@ class Carousel extends Component {
     this.setState({
       active: newActive < 0 ? this.state.items.length - 1 : newActive,
       direction: 'left',
-    });
+    }, this.selected);
   }
 
   moveRight() {
@@ -49,10 +55,11 @@ class Carousel extends Component {
     this.setState({
       active: (newActive + 1) % this.state.items.length,
       direction: 'right',
-    });
+    }, () => this.selected() );
   }
 
   render() {
+    // console.log(this.generateItems())
     return (
           <React.Fragment>
           <ReactCSSTransitionGroup
