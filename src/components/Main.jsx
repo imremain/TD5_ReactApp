@@ -1,11 +1,13 @@
 import React from 'react';
 
-import profile from '../assets/images/tecnic-profile.png';
-import code from '../assets/images/code.png';
+import Skill from './Skill';
+
+import profile from '../assets/images/tecnic-profile.svg';
+import code from '../assets/images/code.svg';
 import power from '../assets/images/power-1.png';
 import weakness from '../assets/images/weakness-1.png';
 
-const Main = () => {
+const Main = (props) => {
   return (
     <main>
       <section className='profile'>
@@ -17,36 +19,27 @@ const Main = () => {
         </div>
         <div className='profile__container'>
           <div className='profile__card card-1'>
-            <h3>Habilidades</h3>
+            <h3>Experience</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ea quod qui dolore quidem enim
-              maiores quo, deleniti sed voluptatibus harum corrupti eius sunt eaque laboriosam temporibus
-              facere
-              perspiciatis laborum?
+              {props.info.Experience}
             </p>
           </div>
           <div className='profile__card card-2'>
-            <h3>Habilidades</h3>
+            <h3>Objectives</h3>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio itaque provident assumenda dolorum
-              blanditiis molestiae dolore, incidunt, nostrum quidem sequi accusantium sunt, ea vitae harum
-              inventore velit maiores ab? Hic.
+              {props.info.Objectives}
             </p>
           </div>
           <div className='profile__card card-3'>
-            <h3>Habilidades</h3>
+            <h3>Soft Skills</h3>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio itaque provident assumenda dolorum
-              blanditiis molestiae dolore, incidunt, nostrum quidem sequi accusantium sunt, ea vitae harum
-              inventore velit maiores ab? Hic.
+              {props.info.softSkills}
             </p>
           </div>
           <div className='profile__card card-4'>
-            <h3>Habilidades</h3>
+            <h3>Influences</h3>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio itaque provident assumenda dolorum
-              blanditiis molestiae dolore, incidunt, nostrum quidem sequi accusantium sunt, ea vitae harum
-              inventore velit maiores ab? Hic.
+              {props.info.Influences}
             </p>
           </div>
           <div className='tools'>
@@ -64,18 +57,16 @@ const Main = () => {
               </div>
               <div>
                 <ul className='profile__skills-bars'>
-                  <li className='bar-10'>html</li>
-                  <li className='bar-20'>css</li>
-                  <li className='bar-30'> js</li>
-                  <li className='bar-50'>laravel</li>
-                  <li className='bar-90'>react</li>
+                  {props.info.Tools.map(item =>
+                    <Skill key={item.id} {...item} />
+                    )}
                 </ul>
               </div>
             </div>
             
             <div className='english-level'>
               <h2>
-                <span>70%</span>
+                <span>{props.info.englishLevel}0%</span>
                 English Level
               </h2>
             </div>
@@ -88,8 +79,7 @@ const Main = () => {
             <div className='profile__values__desc'>
               <h3>Mi super poder</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deleniti magnam, earum ducimus
-                itaque tenetur nam inventore nihil aperiam velit?
+                {props.info.mySuperPower}
               </p>
             </div>
           </div>
@@ -100,8 +90,7 @@ const Main = () => {
             <div className='profile__values__desc'>
               <h3>Mi mayor debilidad</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deleniti magnam, earum ducimus
-                itaque tenetur nam inventore nihil aperiam velit?
+                {props.info.myBiggestWeakness}
               </p>
             </div>
           </div>

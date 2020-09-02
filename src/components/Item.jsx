@@ -6,7 +6,7 @@ const Item = (props) => {
 
   return (
     <div className={className}>
-      <a key={`index-${fullname}`} className='slide__item' href='/'>
+      <a key={`index-${fullname}`} className='slide__item' href='javascript:void(0)'>
         <img src={photo} alt='' />
         <span>{fullname}</span>
       </a>
