@@ -12,8 +12,10 @@ const Main = (props) => {
     <main>  
       <section className='profile'>
         <div className='section-title'>
-          <img className='icon' src={profile} alt='' />
-          <h2>Technical Profile</h2>
+          <div className='container-icon'>
+            <img className='icon' src={profile} alt='' />
+          </div>
+          <h2>Tecnic Profile</h2>
         </div>
         <div className='profile__container'>
           <div className='profile__card card-1'>
@@ -43,7 +45,9 @@ const Main = (props) => {
           <div className='tools'>
             <div className='profile__tools'>
               <div className='section-title'>
+                <div className="container-icon">
                 <img className='icon' src={code} alt='tools' />
+                </div>
                 <h2>
                   Tools, languages
                   <br />
@@ -59,13 +63,14 @@ const Main = (props) => {
                 </ul>
               </div>
             </div>
+            
             <div className='english-level'>
-
               <h2>
                 <span>{props.info.englishLevel}0%</span>
                 English Level
               </h2>
             </div>
+
           </div>
           <div className='power profile__values'>
 
