@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import Spinner from './components/animation/Spinner';
 import api from './api';
 
 import './fontawesome';
@@ -47,12 +48,13 @@ class App extends Component {
           <Normalize />
           <Navbar members={data} itemSelected={(item) => this.setState({ memberSelected: item })} />
           <Header member={data[memberSelected]} />
-          <Main info={data[memberSelected]}/>
+          <Main info={data[memberSelected]} />
           <Footer social={data[memberSelected]} />
         </>
       );
     }
-    return <h1>Loading</h1>;
+    // return <h1>Loading</h1>;
+    return <Spinner />;
 
   }
 };
