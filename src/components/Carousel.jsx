@@ -7,9 +7,10 @@ import Item from './Item';
 class Carousel extends Component {
   constructor(props) {
     super(props);
+    const { items, active } = this.props;
     this.state = {
-      items: this.props.items,
-      active: this.props.active,
+      items,
+      active,
       direction: '',
     };
     this.rightClick = this.moveRight.bind(this);
@@ -17,71 +18,73 @@ class Carousel extends Component {
   }
 
   selected() {
-      const seleccion = this.generateItems()[2].key;
-      this.props.selected(seleccion);
-      // console.log('Esta es una seleccion ',this.state.items[seleccion])
-    }
+    const seleccion = this.generateItems()[2].key;
+    const { selected } = this.props;
+    selected(seleccion);
+  }
 
   generateItems() {
-    const items = [];
     let level;
-    console.log(this.state.active);
-    for (let i = this.state.active - 3; i < this.state.active + 4; i++) {
+    const itemsArray = [];
+    const { active, items } = this.state;
+    for (let i = active - 2; i < active + 3; i++) {
       let index = i;
       if (i < 0) {
-        index = this.state.items.length + i;
-      } else if (i >= this.state.items.length) {
-        index = i % this.state.items.length;
+        index = items.length + i;
+      } else if (i >= items.length) {
+        index = i % items.length;
       }
-      level = this.state.active - i;
-      items.push(
-        <Item key={index} fullname={this.state.items[index].fullname} photo={this.state.items[index].photo} level={level} />,
+      level = active - i;
+      itemsArray.push(
+        <Item key={items.length} fullname={items[index].fullname} photo={items[index].photo} level={level} />,
       );
     }
-    return items;
+    return itemsArray;
   }
 
   moveLeft() {
-    let newActive = this.state.active;
+    const { active, items } = this.state;
+    let newActive = active;
     newActive--;
     this.setState({
-      active: newActive < 0 ? this.state.items.length - 1 : newActive,
+      active: newActive < 0 ? items.length - 1 : newActive,
       direction: 'left',
     }, this.selected);
   }
 
   moveRight() {
-    const newActive = this.state.active;
+    const { active, items } = this.state;
+    const newActive = active;
     this.setState({
-      active: (newActive + 1) % this.state.items.length,
+      active: (newActive + 1) % items.length,
       direction: 'right',
-    }, () => this.selected() );
+    }, () => this.selected());
   }
 
   render() {
-    // console.log(this.generateItems())
+    const { direction } = this.state;
     return (
-          <React.Fragment>
-          <ReactCSSTransitionGroup
-            transitionName={this.state.direction}
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}
-          >
-          
-            <div className="slide__group">
-              {this.generateItems()} 
-            </div>
-          </ReactCSSTransitionGroup>
-          
-          <div className="slide__buttons">
-              <div className='slide__buttons-single' onClick={this.leftClick}>
-                <FontAwesomeIcon icon={faAngleLeft} />
-              </div>
-              <div className='slide__buttons-single' onClick={this.rightClick}>
-                <FontAwesomeIcon icon={faAngleRight} />
-              </div>
+      <div>
+        <ReactCSSTransitionGroup
+          transitionName={direction}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+        >
+
+          <div className='slide__group'>
+            {this.generateItems()}
           </div>
-      </React.Fragment>
+        </ReactCSSTransitionGroup>
+
+        <div className='slide__buttons'>
+          <div className='slide__buttons-single' onClick={this.leftClick}>
+            <FontAwesomeIcon icon={faAngleLeft} />
+          </div>
+          <div className='slide__buttons-single' onClick={this.rightClick}>
+            <FontAwesomeIcon icon={faAngleRight} />
+          </div>
+        </div>
+      </div>
     );
   }
 }
