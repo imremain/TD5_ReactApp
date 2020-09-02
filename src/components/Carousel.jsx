@@ -64,27 +64,25 @@ class Carousel extends Component {
   render() {
     const { direction } = this.state;
     return (
-      <div>
-        <ReactCSSTransitionGroup
-          transitionName={direction}
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}
-        >
-
-          <div className='slide__group'>
-            {this.generateItems()}
+      <nav className='slide'>
+          <ReactCSSTransitionGroup
+            transitionName={this.state.direction}
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}
+          >
+            <div className="slide__group">
+              {this.generateItems()} 
+            </div>
+          </ReactCSSTransitionGroup>
+          <div className="slide__buttons">
+              <div className='slide__buttons-single' onClick={this.leftClick}>
+                <FontAwesomeIcon icon={faAngleLeft} />
+              </div>
+              <div className='slide__buttons-single' onClick={this.rightClick}>
+                <FontAwesomeIcon icon={faAngleRight} />
+              </div>
           </div>
-        </ReactCSSTransitionGroup>
-
-        <div className='slide__buttons'>
-          <div className='slide__buttons-single' onClick={this.leftClick}>
-            <FontAwesomeIcon icon={faAngleLeft} />
-          </div>
-          <div className='slide__buttons-single' onClick={this.rightClick}>
-            <FontAwesomeIcon icon={faAngleRight} />
-          </div>
-        </div>
-      </div>
+     </nav>
     );
   }
 }

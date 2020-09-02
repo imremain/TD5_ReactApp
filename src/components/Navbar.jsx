@@ -6,11 +6,7 @@ function Navbar({members, itemSelected}) {
       <Carousel items={props.members} active={0} />
     </nav> */
   return (
-    <nav className='slide'>
-      <div className='slide__group'>
         <Carousel items={members} active={0} selected={(index) => itemSelected(index)} />
-      </div>
-    </nav>
   );
 };
 
