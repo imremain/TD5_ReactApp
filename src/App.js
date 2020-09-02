@@ -45,7 +45,7 @@ class App extends Component {
       return (
         <>
           <Normalize />
-          <Navbar members={data} itemSelected={(item) => this.setState({memberSelected:item})} />
+          <Navbar members={data} itemSelected={(item) => this.setState({ memberSelected: item })} />
           <Header member={data[memberSelected]} />
           <Main info={data[memberSelected]}/>
           <Footer social={data[memberSelected]} />

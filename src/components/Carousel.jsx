@@ -18,9 +18,9 @@ class Carousel extends Component {
   }
 
   selected() {
-    const seleccion = this.generateItems()[2].key;
+    const selection = this.generateItems()[2].key;
     const { selected } = this.props;
-    selected(seleccion);
+    selected(selection);
   }
 
   generateItems() {
@@ -36,7 +36,7 @@ class Carousel extends Component {
       }
       level = active - i;
       itemsArray.push(
-        <Item key={items.length} fullname={items[index].fullname} photo={items[index].photo} level={level} />,
+        <Item key={index} fullname={items[index].fullname} photo={items[index].photo} level={level} />,
       );
     }
     return itemsArray;
@@ -65,24 +65,24 @@ class Carousel extends Component {
     const { direction } = this.state;
     return (
       <nav className='slide'>
-          <ReactCSSTransitionGroup
-            transitionName={this.state.direction}
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}
-          >
-            <div className="slide__group">
-              {this.generateItems()} 
-            </div>
-          </ReactCSSTransitionGroup>
-          <div className="slide__buttons">
-              <div className='slide__buttons-single' onClick={this.leftClick}>
-                <FontAwesomeIcon icon={faAngleLeft} />
-              </div>
-              <div className='slide__buttons-single' onClick={this.rightClick}>
-                <FontAwesomeIcon icon={faAngleRight} />
-              </div>
+        <ReactCSSTransitionGroup
+          transitionName={direction}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+        >
+          <div className='slide__group'>
+            {this.generateItems()}
           </div>
-     </nav>
+        </ReactCSSTransitionGroup>
+        <div className='slide__buttons'>
+          <div className='slide__buttons-single' onClick={this.leftClick} role='button' tabIndex={0}>
+            <FontAwesomeIcon icon={faAngleLeft} />
+          </div>
+          <div className='slide__buttons-single' onClick={this.rightClick} role='button' tabIndex={0}>
+            <FontAwesomeIcon icon={faAngleRight} />
+          </div>
+        </div>
+      </nav>
     );
   }
 }
