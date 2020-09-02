@@ -9,7 +9,7 @@ import weakness from '../assets/images/weakness-1.png';
 
 const Main = (props) => {
   return (
-    <main>
+    <main>  
       <section className='profile'>
         <div className='section-title'>
           <div className='container-icon'>
