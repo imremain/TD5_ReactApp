@@ -61,18 +61,16 @@ class Carousel extends Component {
   render() {
     // console.log(this.generateItems())
     return (
-          <React.Fragment>
+      <nav className='slide'>
           <ReactCSSTransitionGroup
             transitionName={this.state.direction}
             transitionEnterTimeout={500}
             transitionLeaveTimeout={500}
           >
-          
             <div className="slide__group">
               {this.generateItems()} 
             </div>
           </ReactCSSTransitionGroup>
-          
           <div className="slide__buttons">
               <div className='slide__buttons-single' onClick={this.leftClick}>
                 <FontAwesomeIcon icon={faAngleLeft} />
@@ -81,7 +79,7 @@ class Carousel extends Component {
                 <FontAwesomeIcon icon={faAngleRight} />
               </div>
           </div>
-      </React.Fragment>
+     </nav>
     );
   }
 }
