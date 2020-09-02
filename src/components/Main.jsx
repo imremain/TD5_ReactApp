@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Skill from './Skill';
+
 import profile from '../assets/images/tecnic-profile.svg';
 import code from '../assets/images/code.svg';
 import power from '../assets/images/power-1.png';
@@ -10,8 +12,10 @@ const Main = (props) => {
     <main>
       <section className='profile'>
         <div className='section-title'>
-          <img className='icon' src={profile} alt='' />
-          <h2>Technical Profile</h2>
+          <div className='container-icon'>
+            <img className='icon' src={profile} alt='' />
+          </div>
+          <h2>Tecnic Profile</h2>
         </div>
         <div className='profile__container'>
           <div className='profile__card card-1'>
@@ -41,7 +45,9 @@ const Main = (props) => {
           <div className='tools'>
             <div className='profile__tools'>
               <div className='section-title'>
+                <div className="container-icon">
                 <img className='icon' src={code} alt='tools' />
+                </div>
                 <h2>
                   Tools, languages
                   <br />
@@ -51,21 +57,20 @@ const Main = (props) => {
               </div>
               <div>
                 <ul className='profile__skills-bars'>
-                  <li className='bar-10'>{props.info.Tools[0].name}</li>
-                  <li className='bar-20'>{props.info.Tools[1].name}</li>
-                  <li className='bar-30'>{props.info.Tools[2].name}</li>
-                  <li className='bar-50'>{props.info.Tools[3].name}</li>
-                  {/* <li className='bar-100'>{props.info.Tools[4].name}</li> */}
+                  {props.info.Tools.map(item =>
+                    <Skill key={item.id} {...item} />
+                    )}
                 </ul>
               </div>
             </div>
+            
             <div className='english-level'>
-
               <h2>
                 <span>{props.info.englishLevel}0%</span>
                 English Level
               </h2>
             </div>
+
           </div>
           <div className='power profile__values'>
 
